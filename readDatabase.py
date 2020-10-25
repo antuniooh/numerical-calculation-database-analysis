@@ -46,4 +46,6 @@ res = sm.OLS(y,x).fit()
 print(res.params)
 print(res.bse)
 print(res.summary())
+print("R2: " + str(res.rsquared))
+print("R2 ajusted: " + str(res.rsquared_adj))
 
