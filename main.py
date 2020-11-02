@@ -1,6 +1,6 @@
 #Antonio Muniz  22.119.001 - 0
-#Henrique Vital
-#Felipe Moreno
+#Henrique Vital 22119078 - 8
+#Felipe Moreno 22.119.058 - 0
 
 #Passo 1 - Definir Database
 
@@ -9,11 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-sns.set()
-
-df = pd.read_csv("registro01.csv",)
-df.columns = df.columns = ['x0','x1','x2','x3','x4','x5','x6',
-              'x7','x8','x9', 'target']
+df = pd.read_csv('concrete_data.csv')
 
 #Passo 2 - Limpar Database
 
@@ -33,35 +29,32 @@ df.drop_duplicates()
 #Passo 3 - Linear Regressão Multipla
 
 # Importing the dataset
-x = df.iloc[:, :-1].values
-y = df.iloc[:, 10].values
+X = df.iloc[:, :-1].values
+y = df.iloc[:, -1].values
 
-# Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2,  random_state=0)
 
 from sklearn.linear_model import LinearRegression
-result = LinearRegression()
-result.fit(X_train, y_train)
+regressor = LinearRegression()
+regressor.fit(X_train, y_train)
 
-print(result.intercept_) 
-print(result.coef_)
+y_pred = regressor.predict(X_test)
+
+print(regressor.intercept_) 
+print(regressor.coef_)
 
 y_pred= result.predict(X_test)
 
-DF = pd.DataFrame(data=y_test, columns=['y_test'])
-DF['y_predict'] = y_pred
+DF = pd.DataFrame({'Real Values':y_test, 'Predicted Values':y_pred})
 print(DF)
 
 #Passo 4 - Gráfico Linear Regressão Multipla
 
 from sklearn.linear_model import LinearRegression 
-lm= LinearRegression() 
-x = y_test.reshape(-1, 1)
-result=lm.fit(x, y_pred) 
-y_pred= lm.predict(x) 
-plt.scatter(x, y_pred)
-plt.plot(x, y_pred, color = 'red')
+plt.scatter(y_test, y_pred, color = "red")
+plt.xlabel('True Values')
+plt.ylabel('Predictions')
 
 #Passo 5 - R2
 
