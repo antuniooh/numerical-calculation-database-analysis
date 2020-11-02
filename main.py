@@ -12,7 +12,6 @@ import pandas as pd
 df = pd.read_csv('concrete_data.csv')
 
 #Passo 2 - Limpar Database
-
 #exibir valores ausentes ou null
 df.isnull().sum().sort_values(ascending=False)[:10]
 print("Número de linhas e colunas no conjunto de treinamento:", df.shape)
@@ -27,7 +26,6 @@ df.fillna(df.mean(0))
 df.drop_duplicates()
 
 #Passo 3 - Linear Regressão Multipla
-
 # Importing the dataset
 X = df.iloc[:, :-1].values
 y = df.iloc[:, -1].values
@@ -44,19 +42,25 @@ y_pred = regressor.predict(X_test)
 print(regressor.intercept_) 
 print(regressor.coef_)
 
-y_pred= result.predict(X_test)
-
 DF = pd.DataFrame({'Real Values':y_test, 'Predicted Values':y_pred})
 print(DF)
 
 #Passo 4 - Gráfico Linear Regressão Multipla
-
-from sklearn.linear_model import LinearRegression 
-plt.scatter(y_test, y_pred, color = "red")
-plt.xlabel('True Values')
-plt.ylabel('Predictions')
+fig, ax = plt.subplots()
+ax.scatter(y_test, y_pred)
+ax.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=4)
+ax.set_xlabel('measured')
+ax.set_ylabel('predicted')
+plt.show()
 
 #Passo 5 - R2
+import statsmodels.api as sm
+
+x = sm.add_constant(y_test, prepend=True)
+res = sm.OLS(y_pred,x).fit()
+
+print("R2: " + str(res.rsquared))
+print("R2 ajusted: " + str(res.rsquared_adj))
 
 from sklearn import metrics
 r_square = metrics.r2_score(y_test, y_pred)
