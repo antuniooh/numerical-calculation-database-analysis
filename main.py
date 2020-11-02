@@ -55,8 +55,13 @@ print(DF)
 
 #Passo 4 - Gráfico Linear Regressão Multipla
 
-plt.scatter(y_test, y_pred)
-plt.plot(y_pred, y_test, color = 'red')
+from sklearn.linear_model import LinearRegression 
+lm= LinearRegression() 
+x = y_test.reshape(-1, 1)
+result=lm.fit(x, y_pred) 
+y_pred= lm.predict(x) 
+plt.scatter(x, y_pred)
+plt.plot(x, y_pred, color = 'red')
 
 #Passo 5 - R2
 
