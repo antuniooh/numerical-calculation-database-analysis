@@ -67,5 +67,7 @@ r_square = metrics.r2_score(y_test, y_pred)
 print(r_square)
 
 #Passo 5 - Pearson
+df.corr(method='pearson')
 
 #Passo 6 - Spearman
+df.corr(method='spearman')
