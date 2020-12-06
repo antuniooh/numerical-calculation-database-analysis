@@ -33,3 +33,13 @@ python main.py
 ```
 
 O arquivo .ipynb pode ser executado também em sua plataforma de preferência, como Jupyter Notebook, Google Colab e afins, basta importar o arquivo "main.ipynb" e executar.
+
+## Integrantes
+
+O projeto em questão foi desenvolvido por 3 pessoas.
+
+Antonio Muniz - https://www.linkedin.com/in/antuniooh/
+
+Henrique Vital - https://www.linkedin.com/in/henrique-vital-carvalho-45a82b192/
+
+Felipe Moreno - https://www.linkedin.com/in/felipe-pereira-moreno-b11207196/
