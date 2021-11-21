@@ -39,27 +39,25 @@
 
 <!-- ABOUT THE PROJECT -->
 ## 💻 About The Project
-Projeto semestral para a matéria de Cálculo Númerico, disciplina cursada no Centro Universitário FEI. Consiste na análise de um database
+Semester project for the subject of Numerical Calculus, a subject taken at Centro Universitário FEI. It consists of analyzing a database
 
-## Funcionalidade
-
-**1 - Leitura** - Realiza a leitura do database, eliminando dados duplicados, das NAN e dados faltantes. 
+**1 - Read** - It reads the database, eliminating duplicate data, NAN and missing data. 
 
 ![image](images/read.png)
 
-**2 - Regressão Linear** - Realiza a regressão linear múltipla e o gráfico da regressão.
+**2 - Linear Regression** - Performs multiple linear regression and graphing the regression.
 
 ![image](images/regression.png)
 
-**3 - Coeficente de Regressão** - Determinar o coeficiente de determinação R2 da regressão linear múltipla.
+**3 - Regression Coefficient** - Determine the coefficient of determination R2 of the multiple linear regression.
 
 ![image](images/coefficent.png)
 
-**4 - Coeficiente de correlação de Pearson** - Calcula o coeficiente de correlação de Pearson.
+**4 - Pearson's correlation coefficient** - Calculates the Pearson correlation coefficient.
 
 ![image](images/pearson.png)
 
-**5 - Coeficiente de correlação de Spearman** - Calcula o coeficiente de correlação de Spearman.
+**5 - Spearman's correlation coefficient** - Calculates Spearman's correlation coefficient.
 
 ![image](images/spearman.png)
 
@@ -77,6 +75,8 @@ $ cd numerical-calculation-database-analysis/src
 # Install the libs
 $ python -m pip install -U pip
 $ python -m pip install -U matplotlib
+$ python -m pip install -U numpy
+$ python -m pip install -U pandas
 
 # In both Windows and Linux, the execution is done by executing the following line in the terminal, or using an IDE of your choice.
 $ python main.py
@@ -89,4 +89,4 @@ The .ipynb file can also be run on your preferred platform like Jupyter Notebook
 [Antonio Gustavo](https://github.com/antuniooh)           |  [Henrique Vital](https://github.com/henriquevital00)           |  [Felipe Moreno](https://github.com/felipepmoreno)
 :-------------------------:|:-------------------------:|:-------------------------:
 <img src="https://avatars.githubusercontent.com/u/51217271?v=4" alt="drawing" width="150"/>  |  <img src="https://avatars.githubusercontent.com/u/48650626?v=4" alt="drawing" width="150"/>| <img src="https://avatars.githubusercontent.com/u/56607025?v=4" alt="drawing" width="150"/>
-22.119.001-0 | 22.119.078-8 | 22.119.077-0
+22.119.001-0 | 22.119.078-8 | 22.119.058-0
